@@ -1,6 +1,7 @@
-from app import create_app
+import os
+from src import create_app
 
-app = create_app()
 
-if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True, host='0.0.0.0') # False If Production
+if __name__ == '__main__':
+    # Create the app
+    create_app(os.getenv('APP_ENV') or 'default')
