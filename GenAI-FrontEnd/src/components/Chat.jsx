@@ -62,57 +62,63 @@ function Chat({ tabBarIndex }) {
   };
 
   return (
-    <div
-      className={`${
-        tabBarIndex == 0
-          ? "flex flex-col w-full"
-          : "hidden md:flex md:flex-col w-full"
-      } md:w-1/2 lg:w-1/3 pt-16 h-screen justify-between border-l border-gray-200`}
-    >
-      <div className="flex flex-col-reverse h-full max-h-screen overflow-y-auto px-6 pb-1 pt-6">
-        {chats.map((chat, index) => {
-          return (
-            <div key={index} className="">
-              <User question={chat.question} />
-              <AILLM>
-                <Typewriter text={chat.answer} delay={40} />
-              </AILLM>
-            </div>
-          );
-        })}
-      </div>
-      <div className="relative p-6">
-        <button
-          type="submit"
-          className="absolute inset-y-0 right-10 flex items-center"
-          onClick={handleSubmit}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-4 h-4 text-gray-500"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-            />
-          </svg>
-        </button>
-        <form onSubmit={handleSubmit} className="w-full">
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onInput={handleInput}
-            className="bg-gray-50 border border-gray-300 text-base font-normal rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full pr-10 p-2.5 resize-none"
-            placeholder="Write something amazing"
-          />
-        </form>
-      </div>
+    <div>
+      <iframe src="http://8.222.185.57:8501" className="h-full max-h-screen w-[480px] pt-19" frameborder="0"style={{
+        // width: "480px",
+        // height: "100%",
+      }}></iframe>
     </div>
+    // <div
+    //   className={`${
+    //     tabBarIndex == 0
+    //       ? "flex flex-col w-full"
+    //       : "hidden md:flex md:flex-col w-full"
+    //   } md:w-1/2 lg:w-1/3 pt-16 h-screen justify-between border-l border-gray-200`}
+    // >
+    //   <div className="flex flex-col-reverse h-full max-h-screen overflow-y-auto px-6 pb-1 pt-6">
+    //     {chats.map((chat, index) => {
+    //       return (
+    //         <div key={index} className="">
+    //           <User question={chat.question} />
+    //           <AILLM>
+    //             <Typewriter text={chat.answer} delay={40} />
+    //           </AILLM>
+    //         </div>
+    //       );
+    //     })}
+    //   </div>
+    //   <div className="relative p-6">
+    //     <button
+    //       type="submit"
+    //       className="absolute inset-y-0 right-10 flex items-center"
+    //       onClick={handleSubmit}
+    //     >
+    //       <svg
+    //         xmlns="http://www.w3.org/2000/svg"
+    //         fill="none"
+    //         viewBox="0 0 24 24"
+    //         strokeWidth={1.5}
+    //         stroke="currentColor"
+    //         className="w-4 h-4 text-gray-500"
+    //       >
+    //         <path
+    //           strokeLinecap="round"
+    //           strokeLinejoin="round"
+    //           d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+    //         />
+    //       </svg>
+    //     </button>
+    //     <form onSubmit={handleSubmit} className="w-full">
+    //       <textarea
+    //         value={message}
+    //         onChange={(e) => setMessage(e.target.value)}
+    //         onInput={handleInput}
+    //         className="bg-gray-50 border border-gray-300 text-base font-normal rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:outline-none block w-full pr-10 p-2.5 resize-none"
+    //         placeholder="Write something amazing"
+    //       />
+    //     </form>
+    //   </div>
+    // </div>
   );
 }
 

@@ -3,7 +3,7 @@ import { URL } from './BaseURL';
 
 const API = axios.create({
   baseURL: URL.backend_url,
-  timeout: 5000
+  timeout: 1000
 });
 
 export { API as axios }
